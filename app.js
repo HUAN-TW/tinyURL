@@ -25,7 +25,7 @@ app.post('/url', (req, res) => {
   } else {
     const errorMessage =
       'Invalid URL!!! Please provide a valid URL  with http:// or https://'
-    res.render('key', { errorMessage })
+    res.render('error', { errorMessage })
   }
 })
 
