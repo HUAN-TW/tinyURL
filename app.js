@@ -26,15 +26,23 @@ app.post('/url', (req, res) => {
   // 把長URL丟到函式進行檢查
   // function 會回傳短鏈結
   const shortUrl = model.checkLongUrlInData(url)
-  console.log(shortUrl)
+  // console.log(shortUrl)
+  // 傳給key 頁面作渲染
   res.render('key', { shortUrl })
 })
 
 app.get('/:key', (req, res) => {
-  const key = req.params.id
-  // function 從key找到對應的log url
-  // res.redirect(long_url)
+  const key = req.params.key
+  console.log('key' + key)
+  const longUrl = model.getLongUrlFromKey(key)
+
+  if (longUrl) {
+    res.redirect(longUrl)
+  } else {
+    res.render('error', { message: 'URL Not Found' })
+  }
 })
+
 app.listen(port, () => {
   console.log(`Express server is running on http://localhost:${port}`)
 })
