@@ -1,5 +1,6 @@
 const fs = require('fs')
 const jsonDataPath = './public/jsons/data.json'
+let jsonData = loadJsonData()
 
 function loadJsonData() {
   try {
@@ -15,24 +16,17 @@ function saveJsonData(data) {
 }
 
 function checkLongUrlInData(longUrl) {
-  let jsonData = loadJsonData()
-
   for (const key in jsonData) {
     if (jsonData[key] === longUrl) {
       return `http://localhost:3000/${key}` // 找到匹配的長URL，回傳對應的短網址
     }
   }
 
-  //如果沒有對應的資料則創建資料表 生成對應的短鏈結
   const shortUrl = generate_Short_Url(longUrl)
-  // jsonData[shortUrl] = longUrl
-  // saveJsonData(jsonData) // 保存更新後的 JSON
   return shortUrl
 }
 
 function generate_Short_Url(longUrl) {
-  let jsonData = loadJsonData()
-  // 長URL不存在，生成新的短URL
   const characters =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   let shortUrl = ''
@@ -48,7 +42,6 @@ function generate_Short_Url(longUrl) {
 }
 
 function getLongUrlFromKey(key) {
-  let jsonData = loadJsonData()
   if (jsonData[key]) {
     return jsonData[key]
   } else {

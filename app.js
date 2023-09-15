@@ -1,6 +1,4 @@
-// replace log url to my domain/random_characters*5 <--- working in backend
-// render the short url to page /short-url
-// when shoet_url ckick redirect to long url
+//TO DO
 const express = require('express')
 const { engine } = require('express-handlebars')
 const bodyParser = require('body-parser')
@@ -19,16 +17,16 @@ app.get('/', (req, res) => {
 })
 
 app.post('/url', (req, res) => {
-  console.log(req.body)
   const url = req.body.url
-
-  // res.send(`You submitted the URL: ${url}`)
-  // 把長URL丟到函式進行檢查
-  // function 會回傳短鏈結
-  const shortUrl = model.checkLongUrlInData(url)
-  // console.log(shortUrl)
-  // 傳給key 頁面作渲染
-  res.render('key', { shortUrl })
+  const isHttpOrHttpsUrl = /^https?:\/\//.test(url)
+  if (isHttpOrHttpsUrl) {
+    const shortUrl = model.checkLongUrlInData(url)
+    res.render('key', { shortUrl })
+  } else {
+    const errorMessage =
+      'Invalid URL!!! Please provide a valid URL  with http:// or https://'
+    res.render('key', { errorMessage })
+  }
 })
 
 app.get('/:key', (req, res) => {
