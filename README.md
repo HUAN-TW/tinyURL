@@ -14,10 +14,16 @@ Before getting started with TinyURL, make sure you have the following tools and 
 
 1. Clone the TinyURL project to your local machine using Git:
 
-   ```shell
-   git clone https://github.com/HUAN-TW/tinyURL.git
-   cd tinyURL
-   npm install
-   npm run dev
+```shell
+git clone https://github.com/HUAN-TW/tinyURL.git
+cd tinyURL
+npm install
+npm run dev
+```
 
 
+2. Open your web browser and go to http://localhost:3000 or http://127.0.0.1:3000.
+
+3. You can enter the long URL you want to shorten on the TinyURL web page and click the "Shorten" button.
+
+4. TinyURL will generate a short link that you can copy and share with others.
