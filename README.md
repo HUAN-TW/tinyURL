@@ -1,6 +1,6 @@
 # TinyURL - Short URL Generator
 
-TinyURL is a simple short URL generator built with Express and Express Handlebars, styled with <span style="background-color: yellow; color: black;">Tailwind CSS</span>. It helps you shorten long URLs into easy-to-share short links.
+TinyURL is a simple short URL generator built with Express and Express Handlebars, styled with `Tailwind CSS`. It helps you shorten long URLs into easy-to-share short links.
 
 ## Installation
 
