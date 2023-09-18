@@ -1,14 +1,14 @@
 # TinyURL - Short URL Generator
 
-TinyURL is a simple short URL generator built with Express and Express Handlebars, styled with Tailwind CSS. It helps you shorten long URLs into easy-to-share short links.
+TinyURL is a simple short URL generator built with Express and Express Handlebars, styled with <span style="background-color: yellow; color: black;">Tailwind CSS</span>. It helps you shorten long URLs into easy-to-share short links.
 
 ## Installation
 
 Before getting started with TinyURL, make sure you have the following tools and packages installed:
 
-1. [Node.js](https://nodejs.org/) - At least version 12 or higher.
-2. [npm](https://www.npmjs.com/) - Usually installed alongside Node.js. If you need to update npm, you can run `npm install -g npm`.
-3. [nvm](https://github.com/nvm-sh/nvm) (optional) - If you need to manage multiple versions of Node.js, consider using nvm.
+1. [Node.js](https://nodejs.org/) 
+2. [npm](https://www.npmjs.com/) 
+3. [nvm](https://github.com/nvm-sh/nvm) 
 
 ### Install TinyURL
 
