@@ -16,8 +16,14 @@ Before getting started with TinyURL, make sure you have the following tools and 
 
 ```shell
 git clone https://github.com/HUAN-TW/tinyURL.git
+```
+```shell
 cd tinyURL
+```
+```shell
 npm install
+```
+```shell
 npm run dev
 ```
 
